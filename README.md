@@ -1,11 +1,12 @@
-# Handwriting-to-Text
+# Picture-to-Braille
 
 ## Inspiration
 
 ## What it does
-* This program will take a picture input of a handwritten paper and identify letters, group them into words, correct the found words for spelling and type out the paper again.
+* This program will take a picture input of a paper wether it be mail, prescription medicine bottle, text book page for school, etc. and return the text it finds as braille.
+* This can be a great resource to blind students learning in an environment that isnt equipped to teach them as braille printers are often expensive and difficult to use
 ## How we built it
-* This can help students add papers to their computers and teachers read sloppy writing.
+*  
 ## Challenges we ran into
 
 ## Accomplishments that we're proud of
