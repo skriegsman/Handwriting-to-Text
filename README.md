@@ -13,4 +13,12 @@
 
 ## What we learned
 
-## What's next for The Quest to Defeat Danstopher
+## What's next for Picture-to-Braille
+
+# Notes and Tutorials
+
+## OpenCV
+
+## SciKit
+
+## Keras
