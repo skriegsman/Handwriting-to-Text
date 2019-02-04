@@ -19,11 +19,16 @@
 * ## OpenCV:  pip install opencv-contrib-python
   * # What it is:
   * # Links:
-    * https://docs.opencv.org/3.4/d8/d4b/tutorial_py_knn_opencv.html
+    * [https://docs.opencv.org/3.4/d8/d4b/tutorial_py_knn_opencv.html](OpenCV Tutorial)
+    * [https://www.pyimagesearch.com/2018/08/20/opencv-text-detection-east-text-detector/](OpenCV Text Detection Example)
 * ## SciKit:
   * # What it is:
   * # Links:
     * https://scikit-learn.org/stable/
 * ## Keras:
   * # What it is:
+  * # How to Install:
+    * DO NOT INSTALL IN WINDOWS
+    * Use [](Docker) to contain the Tensorflow and Keras mess of programs
   * # Links:
+    * [https://nextjournal.com/gkoehler/digit-recognition-with-keras](Handwriting Recognition Example)
