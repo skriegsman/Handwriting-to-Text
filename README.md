@@ -16,9 +16,14 @@
 * ## What's next for Picture-to-Braille
 
 # Notes and Tutorials
-
-* ## OpenCV
-
-* ## SciKit
-
-* ## Keras
+* ## OpenCV:  pip install opencv-contrib-python
+  * # What it is:
+  * # Links:
+    * https://docs.opencv.org/3.4/d8/d4b/tutorial_py_knn_opencv.html
+* ## SciKit:
+  * # What it is:
+  * # Links:
+    * https://scikit-learn.org/stable/
+* ## Keras:
+  * # What it is:
+  * # Links:
