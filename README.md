@@ -11,7 +11,7 @@
   * Then the string of text identified by pytesseract is fed into TextBlob. TextBlob acts as an autocorrect feature and corrects typos or misidentified letters in the String
   * The final string is then sent to an arduino car via a wifi chip and is printed out onto paper.
 * ## Challenges we ran into
-
+  * Initially we were going to use either scikit-learn found [here](https://scikit-learn.org/stable/) or tensorflow with keras found [here](https://keras.io/) in order to build a template of each letter. Then we would use openCV's built in matchTemplate() function. We found thousands of training images online but soon realized that the time to train it was going to be huge as we only had laptops.
 * ## Accomplishments that we're proud of
 
 * ## What we learned
@@ -19,19 +19,21 @@
 * ## What's next for Picture-to-Braille
 
 # Notes and Tutorials
-* ## OpenCV:  pip install opencv-contrib-python
+* ## pytesseract:
   * ### What it is:
+  * ### Installation
+    * pip install pytesseract
+    * install tesseract-OCR from an exe found [here](https://github.com/tesseract-ocr/tesseract/wiki)
   * ### Links:
-    * (https://docs.opencv.org/3.4/d8/d4b/tutorial_py_knn_opencv.html) [OpenCV Tutorial]
-    * [https://www.pyimagesearch.com/2018/08/20/opencv-text-detection-east-text-detector/] (OpenCV Text Detection Example)
-* ## SciKit:
+
+* ## TextBlob:
   * ### What it is:
+  * ### Installation
   * ### Links:
-    * https://scikit-learn.org/stable/
-* ## Keras:
+* ## OpenCV:  
   * ### What it is:
-  * ### How to Install:
-    * DO NOT INSTALL IN WINDOWS
-    * Use [] (Docker) to contain the Tensorflow and Keras mess of programs
+  * ### Installation:
+    * pip install opencv-contrib-python
   * ### Links:
-    * [https://nextjournal.com/gkoehler/digit-recognition-with-keras] (Handwriting Recognition Example)
+    * [OpenCV Tutorial](https://docs.opencv.org/3.4/d8/d4b/tutorial_py_knn_opencv.html)
+    * [OpenCV Text Detection Example](https://www.pyimagesearch.com/2018/08/20/opencv-text-detection-east-text-detector/)
