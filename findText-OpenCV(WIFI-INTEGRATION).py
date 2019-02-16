@@ -1,6 +1,5 @@
 import cv2
 import pytesseract
-import matplotlib.pyplot as plt
 import numpy as np
 
 """ ---Initial Image Processing--- """
@@ -9,7 +8,7 @@ ret, thresh = cv2.threshold(image,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
 invert = cv2.bitwise_not(thresh)
 
 """ ---Blurs the image to remove noise and smooth edges--- """
-blur = cv2.GaussianBlur(invert, (3,3), 0.1)
+blur = cv2.GaussianBlur(invert, (7,7), 1)
 
 """ ---Auto Rotates the Image to Correct Skew--- """
 coords = np.column_stack(np.where(blur > 0))
@@ -34,10 +33,3 @@ crop = rotated[y:y+h, x:x+w]
 """ ---Finds the text in the processed image--- """
 text = pytesseract.image_to_string(rotated, config= '--psm 1 --oem 1')
 print(text)
-
-""" ---Optional Show Images--- """
-cv2.imshow("image", image)
-cv2.imshow("rotate", rotated)
-cv2.imshow("crop", crop)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
