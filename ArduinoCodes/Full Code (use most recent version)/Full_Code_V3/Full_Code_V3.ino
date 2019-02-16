@@ -583,8 +583,44 @@ void translateIR()
   break;
   
   case 0xFFA857:
-  Serial.println("VOL -; SERVO ARM DOWN"); 
+  Serial.println("VOL -; Letter H"); 
   //myServo.write(90); 
+  myServo.write(90);
+  delay(95);
+  myServo.write(0);
+  delay(200);
+  digitalWrite(Dir_A_M1, HIGH);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 255);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, HIGH);
+  delay(190);
+  analogWrite(PWM_M1, 0);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 0);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, LOW);
+  myServo.write(90);
+  delay(95);
+  myServo.write(0);
+  delay(200);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, HIGH);
+  analogWrite(PWM_M2, 255);
+  digitalWrite(Dir_A_M2, HIGH);
+  digitalWrite(Dir_B_M2, LOW);
+  delay(95);
+  analogWrite(PWM_M1, 0);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 0);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, LOW);
+  myServo.write(90);
+  delay(95);
+  myServo.write(0);
+  delay(200);
   break;
   
   case 0xFF906F: 
