@@ -178,47 +178,129 @@ void translateIR()
   break; 
    
   case 0xFFB04F: 
-  Serial.println("ST/REPT");
+  Serial.println("ST/REPT; Letter K");
+  indent();
+  forward();
+  forward();
+  indent();
   break;
   
   case 0xFF6897: 
-  Serial.println("0"); 
+  Serial.println("0; Letter L");
+  indent();
+  forward();
+  indent();
+  forward();
+  indent(); 
   break;
 
   case 0xFF30CF: 
-  Serial.println("1"); 
+  Serial.println("1; Letter M");
+  indent();
+  forward();
+  forward();
+  indent();
+  forward();
+  right();
+  indent(); 
   break;
   
   case 0xFF18E7:
-  Serial.println("2");
+  Serial.println("2; Letter N");
+  indent();
+  forward();
+  forward();
+  indent();
+  forward();
+  right();
+  indent();
+  forward();
+  right();
+  indent();
   break;
   
   case 0xFF7A85: 
-  Serial.println("3"); 
+  Serial.println("3; Letter O");
+  indent();
+  forward();
+  forward();
+  indent();
+  right();
+  indent(); 
   break;
   
   case 0xFF10EF:
-  Serial.println("4");
+  Serial.println("4; Letter P");
+  indent();
+  forward();
+  forward();
+  indent();
+  forward();
+  right();
+  indent();
   break; 
   
   case 0xFF38C7:
-  Serial.println("5");  
+  Serial.println("5; Letter Q");
+  indent();
+  forward();
+  indent();
+  forward();
+  indent();
+  forward();
+  right();
+  indent();
+  forward();
+  right();
+  indent();  
   break;
   
   case 0xFF5AA5:
-  Serial.println("6");
+  Serial.println("6; Letter R");
+  indent();
+  forward();
+  indent();
+  forward();
+  indent();
+  forward();
+  right();
+  indent();
   break;
   
   case 0xFF42BD:
-  Serial.println("7");
+  Serial.println("7; Letter S");
+  indent();
+  forward();
+  indent();
+  forward();
+  right();
+  forward();
+  left();
+  indent();
   break; 
   
   case 0xFF4AB5:
-  Serial.println("8");
+  Serial.println("8; Letter T");
+  indent();
+  forward();
+  indent();
+  forward();
+  right();
+  indent();
+  forward();
+  left();
+  indent();
   break;
   
   case 0xFF52AD:
-  Serial.println("9");
+  Serial.println("9; Letter U");
+  indent();
+  forward();
+  right();
+  indent();
+  left();
+  forward();
+  indent();
   break;
   
   case 0xFFFFFFFF:
