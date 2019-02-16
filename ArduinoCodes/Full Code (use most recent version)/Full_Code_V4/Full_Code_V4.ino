@@ -121,24 +121,60 @@ void translateIR()
   break;
   
   case 0xFFC23D:
-  Serial.println("FAST FORWARD; NEXT COLUMN");
+  Serial.println("FAST FORWARD; Letter F");
+  forward();
+  indent();
+  forward();
+  indent();
+  forward();
+  right();
+  indent();
   break;
   
   case 0xFFE01F:
-  Serial.println("ARROW DOWN");  
+  Serial.println("ARROW DOWN; Letter G"); 
+  forward();
+  indent();
+  forward();
+  indent();
+  right();
+  indent();
+  forward();
+  right();
+  indent(); 
   break;
   
   case 0xFFA857:
-  Serial.println("VOL -; SERVO ARM DOWN"); 
-  myServo.write(90); 
+  Serial.println("VOL -; Letter H"); 
+  forward();
+  indent();
+  forward();
+  indent();
+  backwards();
+  right();
+  indent();
   break;
   
   case 0xFF906F: 
-  Serial.println("ARROW UP"); 
+  Serial.println("ARROW UP; Letter I");
+  forward();
+  indent();
+  right();
+  forward();
+  left();
+  indent(); 
   break;
   
   case 0xFF9867: 
-  Serial.println("EQ");
+  Serial.println("EQ; Letter J");
+  forward();
+  indent();
+  forward();
+  right();
+  indent();
+  forward();
+  left();
+  indent();
   break; 
    
   case 0xFFB04F: 
@@ -245,7 +281,24 @@ void right(){
   delay(200);
 }
 
-void 180Left(){
+void backwards(){
+  analogWrite(PWM_M1, 255);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, HIGH);
+  analogWrite(PWM_M2, 255);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, HIGH);
+  delay(95);
+  analogWrite(PWM_M1, 0);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 0);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, LOW);
+  delay(200);
+}
+
+void flipLeft(){
   analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, HIGH);
   digitalWrite(Dir_B_M1, LOW);
@@ -262,7 +315,7 @@ void 180Left(){
   delay(200);
 }
 
-void 180Right(){
+void flipRight(){
   analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, LOW);
   digitalWrite(Dir_B_M1, HIGH);
