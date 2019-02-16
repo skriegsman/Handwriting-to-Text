@@ -1,7 +1,5 @@
 import cv2
 import pytesseract
-import os
-from PIL import Image
 
 """
 This file will take in a picture of text and use cv2.matchTemplate to match
