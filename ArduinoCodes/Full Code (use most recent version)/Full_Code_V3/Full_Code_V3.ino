@@ -300,6 +300,7 @@ void translateIR()
   delay(95);
   myServo.write(0);
   delay(95);
+  analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, HIGH);
   digitalWrite(Dir_B_M1, LOW);
   analogWrite(PWM_M2, 255);
@@ -313,6 +314,7 @@ void translateIR()
   digitalWrite(Dir_A_M2, LOW);
   digitalWrite(Dir_B_M2, LOW);
   delay(200);
+  analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, HIGH);
   digitalWrite(Dir_B_M1, LOW);
   analogWrite(PWM_M2, 255);
@@ -326,6 +328,7 @@ void translateIR()
   digitalWrite(Dir_A_M2, LOW);
   digitalWrite(Dir_B_M2, LOW);
   delay(200);
+  analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, LOW);
   digitalWrite(Dir_B_M1, HIGH);
   analogWrite(PWM_M2, 255);
@@ -339,6 +342,7 @@ void translateIR()
   digitalWrite(Dir_A_M2, LOW);
   digitalWrite(Dir_B_M2, LOW);
   delay(200);
+  analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, HIGH);
   digitalWrite(Dir_B_M1, LOW);
   analogWrite(PWM_M2, 255);
@@ -373,6 +377,7 @@ void translateIR()
   analogWrite(PWM_M2, 0);
   digitalWrite(Dir_A_M2, LOW);
   digitalWrite(Dir_B_M2, LOW);*/
+  analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, HIGH);
   digitalWrite(Dir_B_M1, LOW);
   analogWrite(PWM_M2, 255);
@@ -390,6 +395,7 @@ void translateIR()
   delay(95);
   myServo.write(0);
   delay(95);  
+  analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, HIGH);
   digitalWrite(Dir_B_M1, LOW);
   analogWrite(PWM_M2, 255);
@@ -403,6 +409,7 @@ void translateIR()
   digitalWrite(Dir_A_M2, LOW);
   digitalWrite(Dir_B_M2, LOW);
   delay(200);
+  analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, HIGH);
   digitalWrite(Dir_B_M1, LOW);
   analogWrite(PWM_M2, 255);
@@ -420,6 +427,7 @@ void translateIR()
   delay(95);
   myServo.write(0);
   delay(95); 
+  analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, HIGH);
   digitalWrite(Dir_B_M1, LOW);
   analogWrite(PWM_M2, 255);
@@ -433,6 +441,7 @@ void translateIR()
   digitalWrite(Dir_A_M2, LOW);
   digitalWrite(Dir_B_M2, LOW);
   delay(200);
+  analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, HIGH);
   digitalWrite(Dir_B_M1, LOW);
   analogWrite(PWM_M2, 255);
@@ -446,6 +455,7 @@ void translateIR()
   digitalWrite(Dir_A_M2, LOW);
   digitalWrite(Dir_B_M2, LOW);
   delay(200);
+  analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, HIGH);
   digitalWrite(Dir_B_M1, LOW);
   analogWrite(PWM_M2, 255);
@@ -459,6 +469,7 @@ void translateIR()
   digitalWrite(Dir_A_M2, LOW);
   digitalWrite(Dir_B_M2, LOW);
   delay(200);
+  analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, HIGH);
   digitalWrite(Dir_B_M1, LOW);
   analogWrite(PWM_M2, 255);
@@ -589,6 +600,7 @@ void translateIR()
   delay(95);
   myServo.write(0);
   delay(200);
+  analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, HIGH);
   digitalWrite(Dir_B_M1, LOW);
   analogWrite(PWM_M2, 255);
@@ -605,8 +617,45 @@ void translateIR()
   delay(95);
   myServo.write(0);
   delay(200);
+  analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, LOW);
   digitalWrite(Dir_B_M1, HIGH);
+  analogWrite(PWM_M2, 255);
+  digitalWrite(Dir_A_M2, HIGH);
+  digitalWrite(Dir_B_M2, LOW);
+  delay(95);
+  analogWrite(PWM_M1, 0);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 0);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, LOW);
+  delay(100);
+  myServo.write(90);
+  delay(95);
+  myServo.write(0);
+  delay(200);
+  break;
+  
+  case 0xFF906F: 
+  Serial.println("ARROW UP; Letter I");
+  analogWrite(PWM_M1, 255);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, HIGH);
+  analogWrite(PWM_M2, 255);
+  digitalWrite(Dir_A_M2, HIGH);
+  digitalWrite(Dir_B_M2, LOW);
+  delay(95);
+  analogWrite(PWM_M1, 0);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 0);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, LOW);
+  delay(100);
+  analogWrite(PWM_M1, 255);
+  digitalWrite(Dir_A_M1, HIGH);
+  digitalWrite(Dir_B_M1, LOW);
   analogWrite(PWM_M2, 255);
   digitalWrite(Dir_A_M2, HIGH);
   digitalWrite(Dir_B_M2, LOW);
@@ -621,10 +670,65 @@ void translateIR()
   delay(95);
   myServo.write(0);
   delay(200);
-  break;
-  
-  case 0xFF906F: 
-  Serial.println("ARROW UP"); 
+  analogWrite(PWM_M1, 255);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, HIGH);
+  analogWrite(PWM_M2, 255);
+  digitalWrite(Dir_A_M2, HIGH);
+  digitalWrite(Dir_B_M2, LOW);
+  delay(95);
+  analogWrite(PWM_M1, 0);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 0);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, LOW); 
+  delay(100);
+  analogWrite(PWM_M1, 255);
+  digitalWrite(Dir_A_M1, HIGH);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 255);
+  digitalWrite(Dir_A_M2, HIGH);
+  digitalWrite(Dir_B_M2, LOW);
+  delay(95);
+  analogWrite(PWM_M1, 0);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 0);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, LOW);
+  delay(100);
+  analogWrite(PWM_M1, 255);
+  digitalWrite(Dir_A_M1, HIGH);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 255);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, HIGH);
+  delay(95);
+  analogWrite(PWM_M1, 0);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 0);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, LOW);
+  delay(100);
+  analogWrite(PWM_M1, 255);
+  digitalWrite(Dir_A_M1, HIGH);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 255);
+  digitalWrite(Dir_A_M2, HIGH);
+  digitalWrite(Dir_B_M2, LOW);
+  delay(95);
+  analogWrite(PWM_M1, 0);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 0);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, LOW);
+  myServo.write(90);
+  delay(95);
+  myServo.write(0);
+  delay(200);
   break;
   
   case 0xFF9867: 
