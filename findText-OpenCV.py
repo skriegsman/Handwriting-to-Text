@@ -3,20 +3,6 @@ import pytesseract
 import matplotlib.pyplot as plt
 import numpy as np
 
-"""
-This file will take in a picture of text and use cv2.matchTemplate to match
-characters in the text to a letter. It will return a final string to be sent
-to the printer.
-
-Input: Picture of text
-Output: String
-
-Process:
-- search for every template in the given textself.
-- The top left most template match is the first char. The next leftmost one of the same y value is the second, etc
-- Add chars to a string as they are found
-"""
-
 image = cv2.imread("pictures/skew1.png", 0)
 ret, thresh = cv2.threshold(image,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
 invert = cv2.bitwise_not(thresh)
@@ -38,8 +24,7 @@ rotated = cv2.warpAffine(invert, M, (w, h), flags=cv2.INTER_CUBIC, borderMode=cv
 
 
 """ ---Auto Crop Image using the above minAreaRect--- """
-box = cv2.boxPoints(angle)
-crop = rotated[texty:texty+texth, textx:textx+textw]
+crop = rotated[int(textx):int(textx+textw), int(texty):int(texty+texth)]
 
 #text = pytesseract.image_to_string(rotated, config= '--psm 1 --oem 1')
 #print(text)
