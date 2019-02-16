@@ -260,12 +260,16 @@ void translateIR()
   forward();
   forward();
   indent();
-  forward();
   right();
   indent();
-  forward();
-  right();
+  forward(); 
+  left();
   indent();
+  right();
+  backwards();
+  left();
+  backwards();
+  backwards();
   break;
   
   case 0xFF7A85: 
@@ -276,17 +280,25 @@ void translateIR()
   indent();
   right();
   indent(); 
+  left();
+  backwards();
+  backwards();
   break;
   
   case 0xFF10EF:
   Serial.println("4; Letter P");
   indent();
   forward();
+  indent();
   forward();
   indent();
   forward();
   right();
   indent();
+  left();
+  backwards();
+  backwards();
+  backwards();
   break; 
   
   case 0xFF38C7:
@@ -295,13 +307,17 @@ void translateIR()
   forward();
   indent();
   forward();
+  right();
+  indent();
+  left();
   indent();
   forward();
   right();
   indent();
-  forward();
-  right();
-  indent();  
+  left();
+  backwards();
+  backwards();
+  backwards();  
   break;
   
   case 0xFF5AA5:
@@ -311,9 +327,11 @@ void translateIR()
   indent();
   forward();
   indent();
-  forward();
   right();
   indent();
+  left();
+  backwards();
+  backwards();
   break;
   
   case 0xFF42BD:
@@ -322,10 +340,13 @@ void translateIR()
   forward();
   indent();
   forward();
-  right();
   forward();
-  left();
+  right();
   indent();
+  left();
+  backwards();
+  backwards();
+  backwards();
   break; 
   
   case 0xFF4AB5:
@@ -336,9 +357,14 @@ void translateIR()
   forward();
   right();
   indent();
-  forward();
   left();
+  forward();
+  right();
   indent();
+  left();
+  backwards();
+  backwards();
+  backwards();
   break;
   
   case 0xFF52AD:
@@ -350,6 +376,8 @@ void translateIR()
   left();
   forward();
   indent();
+  backwards();
+  backwards();
   break;
   
   case 0xFFFFFFFF:
