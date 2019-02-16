@@ -76,6 +76,8 @@ void translateIR()
   forward();
   forward();
   indent();
+  backwards();
+  backwards();
   break;
   
   case 0xFF629D:
@@ -84,6 +86,8 @@ void translateIR()
   indent();
   forward();
   indent();
+  backwards();
+  backwards();
   break;
   
   case 0xFFE21D:
@@ -94,6 +98,9 @@ void translateIR()
   forward();
   right();
   indent();
+  right();
+  forward();
+  forward();
   break;
   
   case 0xFF22DD:
@@ -104,8 +111,16 @@ void translateIR()
   forward();
   right();
   indent();
+  forward();
   right(); 
-  indent();  
+  indent(); 
+  right();
+  forward();
+  left();
+  forward();
+  forward();
+  forward();
+  flipXAxis(); 
   break;
   
   case 0xFF02FD:
@@ -113,11 +128,12 @@ void translateIR()
   forward();
   forward();
   indent();
-  forward();
-  right();
-  forward();
   right();
   indent(); 
+  right();
+  forward();
+  forward();
+  flipXAxis();
   break;
   
   case 0xFFC23D:
@@ -380,7 +396,7 @@ void backwards(){
   delay(200);
 }
 
-void flipLeft(){
+void flipXAxis(){
   analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, HIGH);
   digitalWrite(Dir_B_M1, LOW);
@@ -397,7 +413,7 @@ void flipLeft(){
   delay(200);
 }
 
-void flipRight(){
+void flipYAxis(){
   analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, LOW);
   digitalWrite(Dir_B_M1, HIGH);
@@ -419,4 +435,8 @@ void indent(){
   delay(100);
   myServo.write(0);
   delay(100);
+}
+
+void nextLetter(){
+  
 }
