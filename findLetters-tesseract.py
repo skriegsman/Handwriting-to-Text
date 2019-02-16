@@ -4,7 +4,7 @@ from textblob import TextBlob
 
 originalImage = Image.open("pictures\hp.png")
 workingImage = originalImage.copy()
-workingImage = workingImage.filter(ImageFilter.MedianFilter())
+workingImage = originalImage.filter(ImageFilter.MedianFilter())
 
 enhanceSharpness = ImageEnhance.Sharpness(workingImage)
 enhanceColor = ImageEnhance.Color(workingImage)
