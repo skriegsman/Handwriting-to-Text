@@ -35,7 +35,7 @@ crop = rotated[y:y+h, x:x+w]
 text = pytesseract.image_to_string(rotated, config= '--psm 1 --oem 1')
 print(text)
 
-
+""" ---Optional Show Images--- """
 cv2.imshow("image", image)
 cv2.imshow("rotate", rotated)
 cv2.imshow("crop", crop)
