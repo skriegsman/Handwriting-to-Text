@@ -1,10 +1,7 @@
 import cv2
 import pytesseract
 import os
-try:
-    from PIL import Image
-except ImportError:
-    import Image
+from PIL import Image
 
 """
 This file will take in a picture of text and use cv2.matchTemplate to match
@@ -37,9 +34,3 @@ cv2.imwrite(filename, 0)
 text = pytesseract.image_to_string(Image.open(filename))
 os.remove(filename)
 print(text)
-
-
-""" ---This section displays the image--- """ #For Testing only (not in final product)
-cv2.imshow("Original Image", originalImage)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
