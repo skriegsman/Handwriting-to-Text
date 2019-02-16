@@ -18,7 +18,7 @@ Process:
 
 """ ---This section gets the image ready to be analysed--- """
 #load image in greyscale (0) under var name img
-originalImage = cv2.imread('pictures/abcdef.png')
+originalImage = cv2.imread('pictures/page1.png')
 workingImage = cv2.cvtColor(originalImage.copy(), cv2.COLOR_BGR2GRAY)
 #add adaptive thresholding  with a gaussian blur here to get rid of grays and make the page black and white only
 #guassian blur smooths immage and gets rid of misc noise in the image
