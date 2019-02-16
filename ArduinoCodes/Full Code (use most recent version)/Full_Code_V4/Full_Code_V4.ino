@@ -98,9 +98,11 @@ void translateIR()
   forward();
   right();
   indent();
-  right();
-  forward();
-  forward();
+  backwards();
+  left();
+  backwards();
+  backwards();
+  backwards();
   break;
   
   case 0xFF22DD:
@@ -130,10 +132,9 @@ void translateIR()
   indent();
   right();
   indent(); 
-  right();
-  forward();
-  forward();
-  flipYAxis();
+  left();
+  backwards();
+  backwards();
   break;
   
   case 0xFFC23D:
@@ -145,11 +146,10 @@ void translateIR()
   forward();
   right();
   indent();
-  right();
-  forward();
-  forward();
-  forward();
-  flipYAxis();
+  left();
+  backwards();
+  backwards();
+  backwards();
   break;
   
   case 0xFFE01F:
@@ -180,10 +180,9 @@ void translateIR()
   indent();
   right();
   indent();
-  right();
-  forward();
-  forward();
-  flipYAxis();
+  left();
+  backwards();
+  backwards();
   break;
   
   case 0xFF906F: 
@@ -194,11 +193,10 @@ void translateIR()
   forward();
   right();
   indent();
-  right();
-  forward();
-  forward();
-  forward();
-  flipYAxis();
+  left();
+  backwards();
+  backwards();
+  backwards();
   break;
   
   case 0xFF9867: 
@@ -211,12 +209,12 @@ void translateIR()
   forward();
   left();
   indent();
-  flipYAxis();
-  forward();
-  forward();
+  backwards();
+  backwards();
+  backwards();
+  right();
+  backwards();
   left();
-  forward();
-  flipXAxis();
   break; 
    
   case 0xFFB04F: 
@@ -225,6 +223,10 @@ void translateIR()
   forward();
   forward();
   indent();
+  flipYAxis();
+  forward();
+  forward();
+  flipYAxis();
   break;
   
   case 0xFF6897: 
@@ -234,6 +236,10 @@ void translateIR()
   indent();
   forward();
   indent(); 
+  flipYAxis();
+  forward();
+  forward();
+  flipYAxis();
   break;
 
   case 0xFF30CF: 
