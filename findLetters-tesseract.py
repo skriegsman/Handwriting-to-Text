@@ -14,6 +14,6 @@ workingImage = enhanceColor.enhance(0)
 workingImage = workingImage.convert('1')
 
 text = pytesseract.image_to_string(workingImage)
-correctedText = TextBlob(text).correct()
+#correctedText = TextBlob(text).correct()
 
-print(correctedText)
+print(text)

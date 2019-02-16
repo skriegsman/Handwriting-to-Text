@@ -16,3 +16,5 @@ workingImage = cv2.GaussianBlur(workingImage, (5, 5), 0)
 workingImage = cv2.threshold(workingImage, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
 
 enhancer = ImageEnhance.Contrast(im)
+
+crop = cv2.GaussianBlur(crop, (9,9), 1.5)
