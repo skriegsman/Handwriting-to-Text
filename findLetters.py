@@ -23,8 +23,10 @@ originalImage = cv2.imread('pictures/harrypotter.png')
 workingImage = cv2.cvtColor(originalImage.copy(), cv2.COLOR_BGR2GRAY)
 
 kernel = np.ones((1, 1), np.uint8)
-workingImage = cv2.dilate(workingImage, kernel, iterations=1)
 workingImage = cv2.erode(workingImage, kernel, iterations=1)
+workingImage = cv2.dilate(workingImage, kernel, iterations=1)
+
+workingImage = cv2.threshold(workingImage, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
 
 
 """ ---Finds text in the image using tesseract--- """
