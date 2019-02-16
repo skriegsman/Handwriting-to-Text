@@ -12,7 +12,7 @@
   * The final string is then sent to an arduino car via a wifi chip and is printed out onto paper.
 * ## Challenges we ran into
   * Initially we were going to use either scikit-learn found [here](https://scikit-learn.org/stable/) or tensorflow with keras found [here](https://keras.io/) in order to build a template of each letter. Then we would use openCV's built in matchTemplate() function. We found thousands of training images online but soon realized that the time to train it was going to be huge as we only had laptops.
-* ## Accomplishments that we're proud of
+* ## Accomplishments that we're proud of 
 
 * ## What we learned
 
