@@ -30,6 +30,7 @@ filename = "{}.png".format(os.getpid())
 cv2.imwrite(filename, 0)
 
 
+""" ---Finds text in the image using tesseract--- """
 text = pytesseract.image_to_string(Image.open(filename))
 os.remove(filename)
 print(text)
