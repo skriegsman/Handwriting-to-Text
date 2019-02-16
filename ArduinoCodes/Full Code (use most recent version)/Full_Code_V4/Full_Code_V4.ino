@@ -120,7 +120,7 @@ void translateIR()
   forward();
   forward();
   forward();
-  flipXAxis(); 
+  flipYAxis(); 
   break;
   
   case 0xFF02FD:
@@ -133,7 +133,7 @@ void translateIR()
   right();
   forward();
   forward();
-  flipXAxis();
+  flipYAxis();
   break;
   
   case 0xFFC23D:
@@ -145,6 +145,11 @@ void translateIR()
   forward();
   right();
   indent();
+  right();
+  forward();
+  forward();
+  forward();
+  flipYAxis();
   break;
   
   case 0xFFE01F:
@@ -153,11 +158,18 @@ void translateIR()
   indent();
   forward();
   indent();
+  forward();
   right();
   indent();
   forward();
   right();
-  indent(); 
+  indent();
+  forward();
+  forward();
+  forward();
+  right();
+  forward();
+  right(); 
   break;
   
   case 0xFFA857:
@@ -166,19 +178,27 @@ void translateIR()
   indent();
   forward();
   indent();
-  backwards();
   right();
   indent();
+  right();
+  forward();
+  forward();
+  flipYAxis();
   break;
   
   case 0xFF906F: 
   Serial.println("ARROW UP; Letter I");
   forward();
   indent();
+  forward();
+  forward();
+  right();
+  indent();
   right();
   forward();
-  left();
-  indent(); 
+  forward();
+  forward();
+  flipYAxis();
   break;
   
   case 0xFF9867: 
@@ -191,6 +211,12 @@ void translateIR()
   forward();
   left();
   indent();
+  flipYAxis();
+  forward();
+  forward();
+  left();
+  forward();
+  flipXAxis();
   break; 
    
   case 0xFFB04F: 
