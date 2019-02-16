@@ -20,9 +20,7 @@ w, h = template.shape[::-1]
 methods = ['cv2.TM_CCOEFF', 'cv2.TM_CCOEFF_NORMED', 'cv2.TM_CCORR',
             'cv2.TM_CCORR_NORMED', 'cv2.TM_SQDIFF', 'cv2.TM_SQDIFF_NORMED']
 for meth in methods:
-    img = img2.copy()
     method = eval(meth)
-    # Apply template Matching
     res = cv2.matchTemplate(img,template,method)
     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)
     # If the method is TM_SQDIFF or TM_SQDIFF_NORMED, take minimum
