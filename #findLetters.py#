@@ -1,7 +1,0 @@
-import pytesseract
-from PIL import Image, ImageEnhance, ImageFilter
-
-im = Image.open("harrypotter.png")
-im = im.filter(ImageFilter.MedianFilter())
-enhancer = ImageEnhance.Contrast(im)
-im = enhancer.enha ce
