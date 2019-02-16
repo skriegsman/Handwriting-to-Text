@@ -1,7 +1,7 @@
 # Picture-to-Braille
 
 * ## Inspiration
-
+  * We were inspired by .....
 * ## What it does
   * This program will take a picture input of a paper whether it be mail, prescription medicine bottle, text book page for school, etc. and return the text it finds as braille.
   * This can be a great resource to blind students learning in an environment that isn't equipped to teach them as braille printers are often expensive and difficult to use
@@ -17,7 +17,8 @@
 * ## What we learned
 
 * ## What's next for Picture-to-Braille
-
+  * We would like to make this program into an app in the future. The app will connect to a printer over the internet to print any given pdf, photo, document, etc.
+  * The printer would be made into a real product that can be mass-produced, not just a thrown together assortment of stuff. The goal would be to make it for less than $50 so it can be affordable to most people.
 # Notes and Tutorials
 * ## pytesseract:
   * ### What it is:
