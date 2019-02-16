@@ -73,11 +73,19 @@ void translateIR()
   {
   case 0xFFA25D:
   Serial.println("POWER");
+  myServo.write(0);
+  
   break;
   
   case 0xFF629D:
   Serial.println("VOL +; SERVO ARM OPEN");
   myServo.write(0);
+  analogWrite(PWM_M1, 0);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 0);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, LOW);
   break;
   
   case 0xFFE21D:
