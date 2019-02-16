@@ -852,6 +852,47 @@ void translateIR()
       digitalWrite(Dir_A_M2, LOW);
       digitalWrite(Dir_B_M2, LOW);
       delay(100);
+      analogWrite(PWM_M1, 255);
+      digitalWrite(Dir_A_M1, HIGH);
+      digitalWrite(Dir_B_M1, LOW);
+      analogWrite(PWM_M2, 255);
+      digitalWrite(Dir_A_M2, HIGH);
+      digitalWrite(Dir_B_M2, LOW);
+      delay(190);
+      analogWrite(PWM_M1, 0);
+      digitalWrite(Dir_A_M1, LOW);
+      digitalWrite(Dir_B_M1, LOW);
+      analogWrite(PWM_M2, 0);
+      digitalWrite(Dir_A_M2, LOW);
+      digitalWrite(Dir_B_M2, LOW);
+      delay(100);
+      myServo.write(90);
+      delay(95);
+      myServo.write(0);
+      delay(200);
+      break;
+
+    case 0xFF6897:
+      Serial.println("0; Letter L");
+      myServo.write(90);
+      delay(95);
+      myServo.write(0);
+      delay(200);
+      analogWrite(PWM_M1, 255);
+      digitalWrite(Dir_A_M1, LOW);
+      digitalWrite(Dir_B_M1, HIGH);
+      analogWrite(PWM_M2, 255);
+      digitalWrite(Dir_A_M2, HIGH);
+      digitalWrite(Dir_B_M2, LOW);
+      delay(190);
+      analogWrite(PWM_M1, 0);
+      digitalWrite(Dir_A_M1, LOW);
+      digitalWrite(Dir_B_M1, LOW);
+      analogWrite(PWM_M2, 0);
+      digitalWrite(Dir_A_M2, LOW);
+      digitalWrite(Dir_B_M2, LOW);
+      delay(100);
+      analogWrite(PWM_M1, 255);
       digitalWrite(Dir_A_M1, HIGH);
       digitalWrite(Dir_B_M1, LOW);
       analogWrite(PWM_M2, 255);
@@ -869,10 +910,24 @@ void translateIR()
       delay(95);
       myServo.write(0);
       delay(200);
-      break;
-
-    case 0xFF6897:
-      Serial.println("0");
+      analogWrite(PWM_M1, 255);
+      digitalWrite(Dir_A_M1, HIGH);
+      digitalWrite(Dir_B_M1, LOW);
+      analogWrite(PWM_M2, 255);
+      digitalWrite(Dir_A_M2, HIGH);
+      digitalWrite(Dir_B_M2, LOW);
+      delay(95);
+      analogWrite(PWM_M1, 0);
+      digitalWrite(Dir_A_M1, LOW);
+      digitalWrite(Dir_B_M1, LOW);
+      analogWrite(PWM_M2, 0);
+      digitalWrite(Dir_A_M2, LOW);
+      digitalWrite(Dir_B_M2, LOW);
+      delay(100);
+      myServo.write(90);
+      delay(95);
+      myServo.write(0);
+      delay(200);      
       break;
 
     case 0xFF30CF:
