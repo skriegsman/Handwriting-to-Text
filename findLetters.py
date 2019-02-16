@@ -1,4 +1,8 @@
 import cv2
+import pytesseract
+import os
+from PIL import Image
+
 """
 This file will take in a picture of text and use cv2.matchTemplate to match
 characters in the text to a letter. It will return a final string to be sent
@@ -21,6 +25,14 @@ workingImage = cv2.cvtColor(originalImage.copy(), cv2.COLOR_BGR2GRAY)
 #add adaptive thresholding  with a gaussian blur here to get rid of grays and make the page black and white only
 #guassian blur smooths immage and gets rid of misc noise in the image
 workingImage = cv2.adaptiveThreshold(workingImage, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 5, 1)
+#Save image to storage so it can be analysed
+filename = "{}.png".format(os.getpid())
+cv2.imwrite(filename, 0)
+
+
+text = pytesseract.image_to_string(Image.open(filename))
+os.remove(filename)
+print(text)
 
 
 """ ---This section displays the image--- """ #For Testing only (not in final product)
