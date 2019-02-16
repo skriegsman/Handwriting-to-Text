@@ -1,5 +1,6 @@
 import cv2
 import pytesseract
+import numpy as np
 
 """
 This file will take in a picture of text and use cv2.matchTemplate to match
@@ -18,11 +19,13 @@ Process:
 
 """ ---This section gets the image ready to be analysed--- """
 #load image in greyscale (0) under var name img
-originalImage = cv2.imread('pictures/page1.png')
+originalImage = cv2.imread('pictures/harrypotter.png')
 workingImage = cv2.cvtColor(originalImage.copy(), cv2.COLOR_BGR2GRAY)
-#add adaptive thresholding  with a gaussian blur here to get rid of grays and make the page black and white only
-#guassian blur smooths immage and gets rid of misc noise in the image
-workingImage = cv2.GaussianBlur(workingImage, (5, 5), 0)
+
+kernel = np.ones((1, 1), np.uint8)
+workingImage = cv2.erode(workingImage, kernel, iterations=1)
+workingImage = cv2.dilate(workingImage, kernel, iterations=1)
+
 workingImage = cv2.threshold(workingImage, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
 
 
