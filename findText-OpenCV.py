@@ -24,8 +24,7 @@ rotated = cv2.warpAffine(invert, M, (w, h), flags=cv2.INTER_CUBIC, borderMode=cv
 
 
 """ ---Auto Crop Image using the above minAreaRect--- """
-box = cv2.boxPoints(angle)
-crop = rotated[texty:texty+texth, textx:textx+textw]
+crop = rotated[int(textx):int(textx+textw), int(texty):int(texty+texth)]
 
 #text = pytesseract.image_to_string(rotated, config= '--psm 1 --oem 1')
 #print(text)
