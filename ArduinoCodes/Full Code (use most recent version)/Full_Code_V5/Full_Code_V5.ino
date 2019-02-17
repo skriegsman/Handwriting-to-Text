@@ -33,6 +33,7 @@ void setup()
   Serial.println("IR Receiver Button Decode");
   irrecv.enableIRIn();
   irrecv.blink13(true);
+  Serial.println("Enter text you would like to translate to brail:\n");                                                  
 
   // Motor 1 Pin Set-Up
   pinMode(PWM_M1, OUTPUT);
@@ -57,6 +58,8 @@ void setup()
   //Servo Initalizing and Default
   myServo.attach(4);
   myServo.write(0);
+
+
 }
 
 void loop() {
@@ -65,6 +68,27 @@ void loop() {
       translateIR();
       irrecv.resume();      
     }
+
+
+ char rx_byte = 0;
+String rx_str = "";
+
+  if (Serial.available() > 0) {    // is a character available?
+    rx_byte = Serial.read();       // get the character
+    
+    if (rx_byte != '\n') {
+      // a character of the string was received
+      rx_str += rx_byte;
+    }
+    else {
+      // end of string
+      Serial.print("Welcome ");
+      Serial.println(rx_str);
+      rx_str = "";                // clear the string for reuse
+      Serial.println("");
+      Serial.println("Enter your name.");
+    }
+  } // end: if (Serial.available() > 0)
 }
 
 void translateIR()
