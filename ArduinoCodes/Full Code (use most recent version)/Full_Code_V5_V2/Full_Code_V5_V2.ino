@@ -1,10 +1,8 @@
-#include <IRremote.h>
 #include <Servo.h>
 
-// IR Reciever Set-Up
-const int recieverPin = 7;
-IRrecv irrecv(recieverPin);
-decode_results results;
+char receivedChar;
+
+Servo myServo;
 
 // Motor 1 Set-Up
 const int PWM_M1 = 5;
@@ -16,91 +14,36 @@ const int PWM_M2 = 9;
 const int Dir_A_M2 = 10;
 const int Dir_B_M2 = 11;
 
-// Servo Set-Up
-Servo myServo;
+void setup() {
+ Serial.begin(9600);
+ Serial.println("<Arduino is ready>");
 
-//Variables Set-Up
-const int delta_x_within_letter = 5;
-const int delta_x_between_letters = 7;
-const int delta_y_within_letter = 5;
-const int delta_y_between_letters = 9;
-char receivedChar;
+  myServo.attach(4);
+  myServo.write(0);
 
-void setup()
-{
-  Serial.begin(9600);
-
-  //Initializing IR Reciever
-  Serial.println("IR Receiver Button Decode");
-  irrecv.enableIRIn();
-  irrecv.blink13(true);
-  Serial.println("Enter text you would like to translate to brail:\n");
-
-  // Motor 1 Pin Set-Up
+ // Motor 1 Pin Set-Up
   pinMode(PWM_M1, OUTPUT);
   pinMode(Dir_A_M1, OUTPUT);
   pinMode(Dir_B_M1, OUTPUT);
-
+  
   // Motor 2 Pin Set-Up
   pinMode(PWM_M2, OUTPUT);
   pinMode(Dir_A_M2, OUTPUT);
   pinMode(Dir_B_M2, OUTPUT);
 
-  // Motor 1 Default
+  // Motor 1 Default 
   analogWrite(PWM_M1, 0);
   digitalWrite(Dir_A_M1, LOW);
   digitalWrite(Dir_B_M1, LOW);
 
-  // Motor 2 Default
+  // Motor 2 Default 
   analogWrite(PWM_M2, 0);
   digitalWrite(Dir_A_M2, LOW);
   digitalWrite(Dir_B_M2, LOW);
-
-  //Servo Initalizing and Default
-  myServo.attach(4);
-  myServo.write(0);
-
-
 }
 
 void loop() {
-  recvOneChar();
-  Serial.println(receivedChar);
-  if (receivedChar == "A"){
-    letterA();
-  } else if (receivedChar == "B"){
-    letterB();
-  } else if (receivedChar == "C"){
-    letterC();
-  } else if (receivedChar == "D"){
-    letterD();
-  } else if (receivedChar == "E"){
-    letterE();
-  } else if (receivedChar == "F"){
-    letterF();
-  } else if (receivedChar == "G"){
-    letterG();
-  } else if (receivedChar == "H"){
-    letterH();
-  } else if (receivedChar == "I"){
-    letterI();
-  } else if (receivedChar == "J"){
-    letterJ();
-  }  else if (receivedChar == "K"){
-    letterB();
-  } else if (receivedChar == "L"){
-    letterB();
-  } else if (receivedChar == "M"){
-    letterB()
-  } else if (receivedChar == "N"){
-    letterB();
-  } else if (receivedChar == "O"){
-    letterB();
-  }
-  if (irrecv.decode(&results))
-  {
-    irrecv.resume();
-  }
+ recvOneChar();
 }
 
 void recvOneChar() {
@@ -108,7 +51,8 @@ void recvOneChar() {
  receivedChar = Serial.read();
  }
 }
-  
+
+
 void forward() {
   analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, HIGH);
