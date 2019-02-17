@@ -16,7 +16,7 @@
   * Sam then found we could use pytesseracts built in method image_to_string to convert the picture to a paragraph format. Once we started using this method we had to work on processing the image so that it could be read accurately. We tried using TextBlob as an autocorrect function that would take misspelled words that pytsseract couldn't understand and correct them. However, it ended up overcorrecting small one letter words and messing up names or uncommon words.
 
 * ## Accomplishments that we're proud of
-  * 
+  *
 
 * ## What we learned
   *
@@ -29,15 +29,17 @@
 # Notes and Tutorials
 * ## pytesseract:
   * ### What it is:
+    * "Python-tesseract is an optical character recognition (OCR) tool for python. That is, it will recognize and “read” the text embedded in images. Python-tesseract is a wrapper for Google’s Tesseract-OCR Engine." ([Source](https://pypi.org/project/pytesseract/))
   * ### Installation
     * pip install pytesseract
-    * install tesseract-OCR from an exe found [here](https://github.com/tesseract-ocr/tesseract/wiki)
-  * ### Links:
+    * install tesseract-OCR from an exe (if on windows) found [here](https://github.com/tesseract-ocr/tesseract/wiki)
+  * ### Helpful Links:
+    * Command Line Usage of pytesseract: https://github.com/tesseract-ocr/tesseract/wiki/Command-Line-Usage
 
 * ## OpenCV:  
   * ### What it is:
   * ### Installation:
     * pip install opencv-contrib-python
-  * ### Links:
+  * ### Helpful Links:
     * [OpenCV Tutorial](https://docs.opencv.org/3.4/d8/d4b/tutorial_py_knn_opencv.html)
     * [OpenCV Text Detection Example](https://www.pyimagesearch.com/2018/08/20/opencv-text-detection-east-text-detector/)
