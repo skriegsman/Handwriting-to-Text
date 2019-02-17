@@ -1,6 +1,6 @@
 # Picture-to-Braille
 * ## Inspiration
-  * We were inspired to build this after Saad complained about the cost of printing in color at the library to which our other friend said at least you're not printing in braille. As it turns out small braille printers can cost upwards of $1500, ours (with some more fine tuning) could be made in a factory for roughly $50. We also decided to add a feature to convert pictures of text to braille allowing blind students to translate over text books or school papers that come in english to braille.
+  * We were inspired to build this after Saad complained about the cost of printing in color at the library to which our other friend said at least you're not printing in braille. As it turns out small braille printers can cost upwards of $1500; ours (with some more fine tuning) could be made in a factory for roughly $50. We also decided to add a feature to convert pictures of text to braille allowing blind students to translate over text books or school papers that come in english to braille.
 
 * ## What it does
   * This program will take a picture input of a paper whether it be mail, prescription medicine bottle, text book page for school, etc. and return the text it finds as braille.
