@@ -73,17 +73,18 @@ void translateIR()
   {
   case 0xFFA25D:
   Serial.println("POWER; Letter A");
+  /*forward();
+  delay(100);
   forward();
-  delay(10);
-  forward();
-  delay(10);
+  delay(100);
   indent();
-  delay(10);
+  delay(100);
   backwards();
-  delay(10);
+  delay(100);
   backwards();
-  delay(10);
-  nextLetter();
+  delay(100);
+  //nextLetter(); */
+  myServo.write(90);
   break;
   
   case 0xFF629D:
@@ -100,7 +101,7 @@ void translateIR()
   delay(10);
   backwards();
   delay(10);
-  nextLetter();
+  //nextLetter();
   break;
   
   case 0xFFE21D:
@@ -150,7 +151,7 @@ void translateIR()
   delay(10);
   indent(); 
   delay(10);
-  right();
+ /* right();
   delay(10);
   forward();
   delay(10);
@@ -163,8 +164,8 @@ void translateIR()
   forward();
   delay(10);
   flipYAxis();
-  delay(10); 
-  nextLetter();
+  delay(10); */
+ // nextLetter();
   break;
   
   case 0xFF02FD:
@@ -658,7 +659,7 @@ void left(){
   analogWrite(PWM_M2, 255);
   digitalWrite(Dir_A_M2, LOW);
   digitalWrite(Dir_B_M2, HIGH);
-  delay(95);
+  delay(500);
   analogWrite(PWM_M1, 0);
   digitalWrite(Dir_A_M1, LOW);
   digitalWrite(Dir_B_M1, LOW);
@@ -675,7 +676,7 @@ void right(){
   analogWrite(PWM_M2, 255);
   digitalWrite(Dir_A_M2, HIGH);
   digitalWrite(Dir_B_M2, LOW);
-  delay(95);
+  delay(500);
   analogWrite(PWM_M1, 0);
   digitalWrite(Dir_A_M1, LOW);
   digitalWrite(Dir_B_M1, LOW);
@@ -726,7 +727,7 @@ void flipYAxis(){
   analogWrite(PWM_M2, 255);
   digitalWrite(Dir_A_M2, HIGH);
   digitalWrite(Dir_B_M2, LOW);
-  delay(180);
+  delay(1000);
   analogWrite(PWM_M1, 0);
   digitalWrite(Dir_A_M1, LOW);
   digitalWrite(Dir_B_M1, LOW);
@@ -751,3 +752,4 @@ void nextLetter(){
   forward();
   left();
 }
+ 
