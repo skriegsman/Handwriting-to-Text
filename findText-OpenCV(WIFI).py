@@ -3,7 +3,7 @@ import pytesseract
 import numpy as np
 
 """ ---Initial Image Processing--- """
-image = cv2.imread("pictures/hp.png", 0)
+image = cv2.imread("pictures/HPlarge.png", 0)
 ret, thresh = cv2.threshold(image,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
 blur = cv2.GaussianBlur(thresh, (1,1), 0)
 invert = cv2.bitwise_not(blur)
