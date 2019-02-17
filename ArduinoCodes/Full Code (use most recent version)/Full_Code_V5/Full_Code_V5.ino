@@ -68,8 +68,10 @@ void loop() {
       translateIR();
       irrecv.resume();      
     }
+}
 
 
+void translateIR(){
  char rx_byte = 0;
 String rx_str = "";
 
@@ -89,560 +91,6 @@ String rx_str = "";
       Serial.println("Enter your name.");
     }
   } // end: if (Serial.available() > 0)
-}
-
-void translateIR()
-{
-  switch(results.value)
-  {
-  case 0xFFA25D:
-  Serial.println("POWER; Letter A");
-  forward();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  //nextLetter(); 
-  break;
-  
-  case 0xFF629D:
-  Serial.println("VOL +; Letter B");
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  //nextLetter();
-  break;
-  
-  case 0xFFE21D:
-  Serial.println("FUNC/STOP; Letter C");
-  forward();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  //nextLetter();
-  break;
-  
-  case 0xFF22DD:
-  Serial.println("REVERSE; Letter D");
-  forward();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
- // nextLetter();
-  break;
-  
-  case 0xFF02FD:
-  Serial.println("PLAY/PAUSE; Letter E");
-  forward();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  //nextLetter();
-  break;
-  
-  case 0xFFC23D:
-  Serial.println("FAST FORWARD; Letter F");
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  //nextLetter();
-  break;
-  
-  case 0xFFE01F:
-  Serial.println("ARROW DOWN; Letter G"); 
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  //nextLetter();
-  break;
-  
-  case 0xFFA857:
-  Serial.println("VOL -; Letter H"); 
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  //nextLetter();
-  break;
-  
-  case 0xFF906F: 
-  Serial.println("ARROW UP; Letter I");
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
- // nextLetter();
-  break;
-  
-  case 0xFF9867: 
-  Serial.println("EQ; Letter J");
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  //nextLetter();
-  break; 
-   
-  case 0xFFB04F: 
-  Serial.println("ST/REPT; Letter K");
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  //nextLetter();
-  break;
-  
-  case 0xFF6897: 
-  Serial.println("0; Letter L");
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent(); 
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  //nextLetter();
-  break;
-
-  case 0xFF30CF: 
-  Serial.println("1; Letter M");
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent(); 
-  delay(500);
-  left();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  //nextLetter();
-  break;
-  
-  case 0xFF18E7:
-  Serial.println("2; Letter N");
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  indent();
-  delay(500); 
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  //nextLetter();
-  break;
-  
-  case 0xFF7A85: 
-  Serial.println("3; Letter O");
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  indent(); 
-  delay(500);
-  left();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  //nextLetter();
-  break;
-  
-  case 0xFF10EF:
-  Serial.println("4; Letter P");
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  //nextLetter();
-  break; 
-  
-  case 0xFF38C7:
-  Serial.println("5; Letter Q");
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);  
-  //nextLetter();
-  break;
-  
-  case 0xFF5AA5:
-  Serial.println("6; Letter R");
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  //nextLetter();
-  break;
-  
-  case 0xFF42BD:
-  Serial.println("7; Letter S");
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  //nextLetter();
-  break; 
-  
-  case 0xFF4AB5:
-  Serial.println("8; Letter T");
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  //nextLetter();
-  break;
-  
-  case 0xFF52AD:
-  Serial.println("9; Letter U");
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  //nextLetter();
-  break;
-  
-  case 0xFFFFFFFF:
-  Serial.println("REPEAT");
-  break;
-  
-  default:
-  Serial.println("Try another button");
-  }
 }
 
 void forward(){
@@ -769,4 +217,677 @@ void nextLetter(){
   left();
   delay(500);
 }
- 
+
+void letterA(){
+  forward();
+  delay(500);
+  forward();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterB(){
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterC(){
+  forward();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterD(){
+  forward();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterE(){
+  forward();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterF(){
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterG(){
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterH(){
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterI(){
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterJ(){
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterK(){
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+  nextLetter(); 
+  delay(500);
+}
+
+void letterL(){
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent(); 
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterM(){
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent(); 
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterN(){
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500); 
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterO(){
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards(); 
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterP(){
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterQ(){
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);  
+}
+
+void letterR(){
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterS(){
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterT(){
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+  right();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+}
+
+void letterU(){
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterV(){
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterW(){
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  left();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+}
+
+void letterX(){
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  left();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+}
+
+void letterY(){
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterZ(){
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  left();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  right();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}

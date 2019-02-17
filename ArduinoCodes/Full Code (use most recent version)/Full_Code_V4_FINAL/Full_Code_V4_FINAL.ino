@@ -87,8 +87,8 @@ void translateIR()
   delay(500);
   backwards();
   delay(500);
-  /*nextLetter(); 
-  delay(500);*/
+  nextLetter(); 
+  delay(500);
   break;
   
   case 0xFF629D:
@@ -105,8 +105,8 @@ void translateIR()
   delay(500);
   backwards();
   delay(500);
-  /*nextLetter();
-  delay(500);*/
+  nextLetter();
+  delay(500);
   break;
   
   case 0xFFE21D:
@@ -131,8 +131,8 @@ void translateIR()
   delay(500);
   backwards();
   delay(500);
-  /*nextLetter(); 
-  delay(500);*/
+  nextLetter(); 
+  delay(500);
   break;
   
   case 0xFF22DD:
@@ -163,8 +163,8 @@ void translateIR()
   delay(500);
   backwards();
   delay(500);
-  /*nextLetter();
-  delay(500);*/
+  nextLetter();
+  delay(500);
   break;
   
   case 0xFF02FD:
