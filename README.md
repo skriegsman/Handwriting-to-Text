@@ -16,10 +16,10 @@
   * Sam then found we could use pytesseracts built in method image_to_string to convert the picture to a paragraph format. Once we started using this method we had to work on processing the image so that it could be read accurately. We tried using TextBlob as an autocorrect function that would take misspelled words that pytsseract couldn't understand and correct them. However, it ended up overcorrecting small one letter words and messing up names or uncommon words.
 
 * ## Accomplishments that we're proud of
-  *
+  * We are very proud that we were able to.....
 
 * ## What we learned
-  *
+  * We learned a lot about.....
 
 * ## What's next for Picture-to-Braille
   * We would like to make this program into an app in the future. The app will connect to a printer over the internet to print any given pdf, photo, document, etc.
@@ -38,8 +38,10 @@
 
 * ## OpenCV:  
   * ### What it is:
+    * OpenCv is a free to use (under a BSD license) library for computer vision. It supports C++, Java, and python. It provides tools for image processing, recognition, and is used for everything from advanced robotics to deep learning facial recognition.
   * ### Installation:
     * pip install opencv-contrib-python
+    * pip install numpy
   * ### Helpful Links:
     * [OpenCV Tutorial](https://docs.opencv.org/3.4/d8/d4b/tutorial_py_knn_opencv.html)
     * [OpenCV Text Detection Example](https://www.pyimagesearch.com/2018/08/20/opencv-text-detection-east-text-detector/)
