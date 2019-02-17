@@ -10,10 +10,12 @@
 * ## How we built it
   *  The computer vision component was made using pytesseract to recognize text in the image and openCV to do the image pre-processing that helps pytesseract to more accurately read the text. OpenCV will detect rotation of the text and align the text as it would appear normally, then it crops the image to fit the text eliminating a good amount of background noise. It also implements a Gaussian blur to smooth out edges and thicken up parts of the letters. The detected letters will then be sent to the printer.
   * The final string is then sent to an arduino car via a wifi chip and is printed out onto paper.
+  * The final string is then sent to an Arduino which then reads the string and prints each character, space, and number in braille. The printer consists of an Arduino car that uses two DC motors to drive a servo motor across the paper. The servo will turn and press onto the paper leaving a small bump (the paper is on a soft surface. The sequence of driving and servo turns form a braille pattern.
 
 * ## Challenges we ran into
   * Initially we were going to use either scikit-learn found [here](https://scikit-learn.org/stable/) or tensorflow with keras found [here](https://keras.io/) in order to build a template of each letter. Then we would use openCV's built in matchTemplate() function. We found thousands of training images online but soon realized that the time to train it was going to be huge as we only had laptops.
   * Sam then found we could use pytesseracts built in method image_to_string to convert the picture to a paragraph format. Once we started using this method we had to work on processing the image so that it could be read accurately. We tried using TextBlob as an autocorrect function that would take misspelled words that pytsseract couldn't understand and correct them. However, it ended up overcorrecting small one letter words and messing up names or uncommon words.
+  * Currently the Arduino car doesn't not receive a string from the computer over wifi like planned. Instead, it receives signals from an IR remote telling it to make individual letters depending on what button is pressed.
 
 * ## Accomplishments that we're proud of
   * We are very proud that we were able to get such a high accuracy with this program. We still need to add in functionallity that will ignore images, and apply a blur based on how crisp the image is to start.
