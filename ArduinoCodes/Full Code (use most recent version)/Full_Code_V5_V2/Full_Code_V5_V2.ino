@@ -1,6 +1,9 @@
 #include <Servo.h>
 
 char receivedChar;
+String receivedString = "";
+int i;
+String text = "hello world";
 
 Servo myServo;
 
@@ -15,41 +18,142 @@ const int Dir_A_M2 = 10;
 const int Dir_B_M2 = 11;
 
 void setup() {
- Serial.begin(9600);
- Serial.println("<Arduino is ready>");
+  Serial.begin(9600);
+  Serial.println("<Arduino is ready>");
 
   myServo.attach(4);
   myServo.write(0);
 
- // Motor 1 Pin Set-Up
+  // Motor 1 Pin Set-Up
   pinMode(PWM_M1, OUTPUT);
   pinMode(Dir_A_M1, OUTPUT);
   pinMode(Dir_B_M1, OUTPUT);
-  
+
   // Motor 2 Pin Set-Up
   pinMode(PWM_M2, OUTPUT);
   pinMode(Dir_A_M2, OUTPUT);
   pinMode(Dir_B_M2, OUTPUT);
 
-  // Motor 1 Default 
+  // Motor 1 Default
   analogWrite(PWM_M1, 0);
   digitalWrite(Dir_A_M1, LOW);
   digitalWrite(Dir_B_M1, LOW);
 
-  // Motor 2 Default 
+  // Motor 2 Default
   analogWrite(PWM_M2, 0);
   digitalWrite(Dir_A_M2, LOW);
   digitalWrite(Dir_B_M2, LOW);
 }
 
+
+
 void loop() {
- recvOneChar();
+    
+    //receivedChar = Serial.read();
+    Serial.println(text);
+    Serial.println("hello");
+
+    
+  for (i = 0; i < sizeof(text); i++) {
+
+    //sortString();
+
+  };
+
+
+  
 }
 
-void recvOneChar() {
- if (Serial.available() > 0) {
- receivedChar = Serial.read();
- }
+
+
+
+void sortString(char letter) {
+
+  if (letter == 'a' || letter == 'A') {
+    letterA();
+  } else if (letter == 'b' || letter == 'B') {
+    letterB();
+  } else if (letter == 'c' || letter == 'C') {
+    letterC();
+  } else if (letter == 'd' || letter == 'D') {
+    letterD();
+  } else if (letter == 'e' || letter == 'E') {
+    letterE();
+  } else if (letter == 'f' || letter == 'F') {
+    letterF();
+  } else if (letter == 'g' || letter == 'G') {
+    letterG();
+  } else if(letter == 'h' || letter == 'H') {
+    letterH();
+  } else if(letter == 'i' || letter == 'I') {
+    letterI();
+  } else if(letter == 'j' || letter == 'J') {
+    letterJ();
+  } else if(letter == 'k' || letter == 'K') {
+    letterK();
+  } else if(letter == 'l' || letter == 'L') {
+    letterL();
+  } else if(letter == 'm' || letter == 'M') {
+    letterN();
+  } else if(letter == 'o' || letter == 'O') {
+    letterO();
+  } else if(letter == 'p' || letter == 'P') {
+    letterP();
+  } else if(letter == 'q' || letter == 'Q') {
+    letterQ();
+  } else if(letter == 'r' || letter == 'R') {
+    letterR();
+  } else if(letter == 's' || letter == 'S') {
+    letterS();
+  } else if(letter == 't' || letter == 'T') {
+    letterT();
+  } else if(letter == 'u' || letter == 'U') {
+    letterU();
+  } else if(letter == 'v' || letter == 'V') {
+    letterV();
+  } else if(letter == 'w' || letter == 'W') {
+    letterW();
+  } else if(letter == 'x' || letter == 'X') {
+    letterX();
+  } else if(letter == 'y' || letter == 'Y') {
+    letterY();
+  } else if(letter == 'z' || letter == 'Z') {
+    letterZ();
+  } else if(letter == '#') {
+    hashTagSign();
+  } else if(letter == '0') {
+    numberZERO();
+  } else if(letter == '1') {
+    numberONE();
+  } else if(letter == '2') {
+    numberTWO();
+  } else if(letter == '3') {
+    numberTHREE();
+  } else if(letter == '4') {
+    numberFOUR();
+  } else if(letter == '5') {
+    numberFIVE();
+  } else if(letter == '6') {
+    numberSIX();
+  } else if(letter == '7') {
+    numberSEVEN();
+  } else if(letter == '8') {
+    numberEIGHT();
+  } else if(letter == '9') {
+    numberNINE();
+  };
+
+
+
+
+  /* string = serial.read;
+      method RandomName (){
+
+  */
+
+
+
+
 }
 
 
