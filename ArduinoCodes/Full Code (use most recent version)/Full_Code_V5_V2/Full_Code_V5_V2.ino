@@ -1,9 +1,9 @@
 #include <Servo.h>
 
 char receivedChar;
-String receivedString = "";
+String receivedString[] = "";
 int i;
-String text = "hello world";
+String text[] = "hello world";
 
 Servo myServo;
 
@@ -50,15 +50,15 @@ void setup() {
 void loop() {
     
     //receivedChar = Serial.read();
-    Serial.println(text);
+    Serial.println(text[0]);
     Serial.println("hello");
 
     
   for (i = 0; i < sizeof(text); i++) {
+    char temp = text[i];
+    sortString(temp);
 
-    //sortString();
-
-  };
+};
 
 
   
