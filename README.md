@@ -16,10 +16,11 @@
   * Sam then found we could use pytesseracts built in method image_to_string to convert the picture to a paragraph format. Once we started using this method we had to work on processing the image so that it could be read accurately. We tried using TextBlob as an autocorrect function that would take misspelled words that pytsseract couldn't understand and correct them. However, it ended up overcorrecting small one letter words and messing up names or uncommon words.
 
 * ## Accomplishments that we're proud of
-  * We are very proud that we were able to.....
+  * We are very proud that we were able to get such a high accuracy with this program. We still need to add in functionallity that will ignore images, and apply a blur based on how crisp the image is to start.
+  * I calculated an accuracy of 99.54887218 percent in the large harry potter image, an accuracy of 98.987341772 percent in skew1, and an accuracy of 97.560975609 percent in shinyPaper. Certain pictures give us issues such as ones that have very small text, or text that has a significant blur or shadow to it.
 
 * ## What we learned
-  * We learned a lot about.....
+  * We learned a lot about the importance of pre-processing the images. The goal is to make the final image you feed into tesseract as similar as possible so you get consistent results. This is why we align and crop every photo so that it is easy to read and there is no noise. We also apply a blur to the image to smooth out complex fonts that might confuse it.
 
 * ## What's next for Picture-to-Braille
   * We would like to make this program into an app in the future. The app will connect to a printer over the internet to print any given pdf, photo, document, etc.
