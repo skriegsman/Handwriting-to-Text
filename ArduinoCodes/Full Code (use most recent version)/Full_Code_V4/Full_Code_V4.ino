@@ -83,6 +83,7 @@ void translateIR()
   delay(10);
   backwards();
   delay(10);
+  nextLetter();
   break;
   
   case 0xFF629D:
@@ -99,6 +100,7 @@ void translateIR()
   delay(10);
   backwards();
   delay(10);
+  nextLetter();
   break;
   
   case 0xFFE21D:
@@ -125,6 +127,7 @@ void translateIR()
   delay(10);
   backwards();
   delay(10);
+  nextLetter();
   break;
   
   case 0xFF22DD:
@@ -161,6 +164,7 @@ void translateIR()
   delay(10);
   flipYAxis();
   delay(10); 
+  nextLetter();
   break;
   
   case 0xFF02FD:
@@ -181,6 +185,7 @@ void translateIR()
   delay(10);
   backwards();
   delay(10);
+  nextLetter();
   break;
   
   case 0xFFC23D:
@@ -207,6 +212,7 @@ void translateIR()
   delay(10);
   backwards();
   delay(10);
+  nextLetter();
   break;
   
   case 0xFFE01F:
@@ -243,6 +249,7 @@ void translateIR()
   delay(10);
   right(); 
   delay(10);
+  nextLetter();
   break;
   
   case 0xFFA857:
@@ -265,6 +272,7 @@ void translateIR()
   delay(10);
   backwards();
   delay(10);
+  nextLetter();
   break;
   
   case 0xFF906F: 
@@ -288,6 +296,7 @@ void translateIR()
   delay(10);
   backwards();
   delay(10);
+  nextLetter();
   break;
   
   case 0xFF9867: 
@@ -320,6 +329,7 @@ void translateIR()
   delay(10);
   left();
   delay(10);
+  nextLetter();
   break; 
    
   case 0xFFB04F: 
@@ -336,6 +346,7 @@ void translateIR()
   delay(10);
   backwards();
   delay(10);
+  nextLetter();
   break;
   
   case 0xFF6897: 
@@ -356,6 +367,7 @@ void translateIR()
   delay(10);
   backwards();
   delay(10);
+  nextLetter();
   break;
 
   case 0xFF30CF: 
@@ -382,6 +394,7 @@ void translateIR()
   delay(10);
   backwards();
   delay(10);
+  nextLetter();
   break;
   
   case 0xFF18E7:
@@ -414,6 +427,7 @@ void translateIR()
   delay(10);
   backwards();
   delay(10);
+  nextLetter();
   break;
   
   case 0xFF7A85: 
@@ -436,6 +450,7 @@ void translateIR()
   delay(10);
   backwards();
   delay(10);
+  nextLetter();
   break;
   
   case 0xFF10EF:
@@ -464,6 +479,7 @@ void translateIR()
   delay(10);
   backwards();
   delay(10);
+  nextLetter();
   break; 
   
   case 0xFF38C7:
@@ -498,6 +514,7 @@ void translateIR()
   delay(10);
   backwards();
   delay(10);  
+  nextLetter();
   break;
   
   case 0xFF5AA5:
@@ -522,6 +539,7 @@ void translateIR()
   delay(10);
   backwards();
   delay(10);
+  nextLetter();
   break;
   
   case 0xFF42BD:
@@ -548,6 +566,7 @@ void translateIR()
   delay(10);
   backwards();
   delay(10);
+  nextLetter();
   break; 
   
   case 0xFF4AB5:
@@ -580,6 +599,7 @@ void translateIR()
   delay(10);
   backwards();
   delay(10);
+  nextLetter();
   break;
   
   case 0xFF52AD:
@@ -602,6 +622,7 @@ void translateIR()
   delay(10);
   backwards();
   delay(10);
+  nextLetter();
   break;
   
   case 0xFFFFFFFF:
@@ -723,5 +744,10 @@ void indent(){
 }
 
 void nextLetter(){
-  
+  right();
+  forward();
+  forward();
+  forward();
+  forward();
+  left();
 }
