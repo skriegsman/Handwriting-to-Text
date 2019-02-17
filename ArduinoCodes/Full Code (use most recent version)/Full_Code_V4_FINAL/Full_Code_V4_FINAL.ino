@@ -781,10 +781,6 @@ void nextLetter(){
   delay(500);
   forward();
   delay(500);
-  forward();
-  delay(500);
-  forward();
-  delay(500);
   left();
   delay(475);
 }
