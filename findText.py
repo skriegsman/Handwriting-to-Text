@@ -4,8 +4,13 @@ import numpy as np
 
 """ ---Reads in image (Will come from app in future)--- """
 #Reads in image as grey scale (0) from the pictures folder
-image = cv2.imread("pictures/extraNoise.jpg", 0)
-cv2.imshow("Original Image", image) #TESTING ONLY
+image = cv2.imread("pictures/jaredHW.jpg", 0)
+#finds original width and height of the image to be used in resizing
+originalWidth = int(image.shape[1] * 0.5)
+originalHeight = int(image.shape[0] * 0.5)
+#Resize image with a scale of 0.5 (above) but preserves aspect ratio
+resized = cv2.resize(image, (originalWidth, originalHeight), interpolation = cv2.INTER_AREA)
+cv2.imshow("Original Image", resized) #TESTING ONLY
 
 """ ---Auto Blurs/Thresholds the Image Based on Initial Sharpness--- """
 blur = cv2.GaussianBlur(image, (1,1), 0)
