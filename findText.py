@@ -2,15 +2,12 @@ import cv2
 import pytesseract
 import numpy as np
 
+
 """ ---Reads in image (Will come from app in future)--- """
 #Reads in image as grey scale (0) from the pictures folder
-image = cv2.imread("pictures/jaredHW.jpg", 0)
-#finds original width and height of the image to be used in resizing
-originalWidth = int(image.shape[1] * 0.5)
-originalHeight = int(image.shape[0] * 0.5)
-#Resize image with a scale of 0.5 (above) but preserves aspect ratio
-resized = cv2.resize(image, (originalWidth, originalHeight), interpolation = cv2.INTER_AREA)
-cv2.imshow("Original Image", resized) #TESTING ONLY
+image = cv2.imread("pictures/skew1.png", 0)
+cv2.imshow("Original Image", image) # TODO: TESTING ONLY
+
 
 """ ---Auto Blurs/Thresholds the Image Based on Initial Sharpness--- """
 blur = cv2.GaussianBlur(image, (1,1), 0)
@@ -19,6 +16,7 @@ blur = cv2.GaussianBlur(image, (1,1), 0)
 #    --> https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_imgproc/py_thresholding/py_thresholding.html
 ret, thresh = cv2.threshold(blur,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
 cv2.imshow("Blured & Thresholded Image", blur) #TESTING ONLY
+
 
 """ ---Auto Rotates the Image to Correct Skew--- """
 #Inverts image to white text on black background ---(Add check for preinverted image)---
