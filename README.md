@@ -38,6 +38,8 @@
     * install tesseract-OCR from an exe (if on windows) found [here](https://github.com/tesseract-ocr/tesseract/wiki)
   * ### Helpful Links:
     * Command Line Usage of pytesseract: https://github.com/tesseract-ocr/tesseract/wiki/Command-Line-Usage
+    * Create training files to add handwritten fonts: http://trainyourtesseract.com/thankyou
+    * Good source of handwritten fonts: https://www.1001fonts.com/handwritten-fonts.html
 
 * ## OpenCV:  
   * ### What it is:
