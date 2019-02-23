@@ -6,7 +6,6 @@ import numpy as np
 """ ---Reads in image (Will come from app in future)--- """
 #Reads in image as grey scale (0) from the pictures folder
 image = cv2.imread("pictures/skew1.png", 0)
-cv2.imshow("Original Image", image) # TODO: TESTING ONLY
 
 
 """ ---Auto Blurs/Thresholds the Image Based on Initial Sharpness--- """
@@ -21,12 +20,9 @@ cv2.imshow("Blured & Thresholded Image", blur) #TESTING ONLY
 """ ---Auto Rotates the Image to Correct Skew--- """
 #Inverts image to white text on black background ---(Add check for preinverted image)---
 invert = cv2.bitwise_not(thresh)
-#
 coords = np.column_stack(np.where(invert > 0))
-#
 angle = cv2.minAreaRect(coords)[-1]
 
-#
 if angle < -45: angle = -(90 + angle)
 else: angle = -angle
 
