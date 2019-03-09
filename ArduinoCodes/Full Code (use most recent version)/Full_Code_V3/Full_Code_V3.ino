@@ -1799,3 +1799,88 @@ void translateIR()
       Serial.println("Try another button");
   }
 }
+
+void forward(){
+  analogWrite(PWM_M1, 255);
+  digitalWrite(Dir_A_M1, HIGH);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 255);
+  digitalWrite(Dir_A_M2, HIGH);
+  digitalWrite(Dir_B_M2, LOW);
+  delay(95);
+  analogWrite(PWM_M1, 0);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 0);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, LOW);
+  delay(200);
+}
+
+void left(){
+  analogWrite(PWM_M1, 255);
+  digitalWrite(Dir_A_M1, HIGH);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 255);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, HIGH);
+  delay(95);
+  analogWrite(PWM_M1, 0);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 0);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, LOW);
+  delay(200);
+}
+
+void right(){
+  analogWrite(PWM_M1, 255);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, HIGH);
+  analogWrite(PWM_M2, 255);
+  digitalWrite(Dir_A_M2, HIGH);
+  digitalWrite(Dir_B_M2, LOW);
+  delay(95);
+  analogWrite(PWM_M1, 0);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 0);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, LOW);
+  delay(200);
+}
+
+void 180Left(){
+  analogWrite(PWM_M1, 255);
+  digitalWrite(Dir_A_M1, HIGH);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 255);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, HIGH);
+  delay(190);
+  analogWrite(PWM_M1, 0);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 0);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, LOW);
+  delay(200);
+}
+
+void 180Right(){
+  analogWrite(PWM_M1, 255);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, HIGH);
+  analogWrite(PWM_M2, 255);
+  digitalWrite(Dir_A_M2, HIGH);
+  digitalWrite(Dir_B_M2, LOW);
+  delay(180);
+  analogWrite(PWM_M1, 0);
+  digitalWrite(Dir_A_M1, LOW);
+  digitalWrite(Dir_B_M1, LOW);
+  analogWrite(PWM_M2, 0);
+  digitalWrite(Dir_A_M2, LOW);
+  digitalWrite(Dir_B_M2, LOW);
+  delay(200);
+}

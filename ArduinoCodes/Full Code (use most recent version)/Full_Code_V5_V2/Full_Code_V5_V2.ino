@@ -1,11 +1,11 @@
 #include <Servo.h>
 
-char receivedChar;
-String receivedString[] = "";
-int i;
-String text[] = "hello world";
-
 Servo myServo;
+
+String str = "This is my string"; 
+int str_len = str.length(); 
+char char_array[str_len];
+str.toCharArray(char_array, str_len);
 
 // Motor 1 Set-Up
 const int PWM_M1 = 5;
@@ -17,7 +17,7 @@ const int PWM_M2 = 9;
 const int Dir_A_M2 = 10;
 const int Dir_B_M2 = 11;
 
-void setup() {
+void setup(){
   Serial.begin(9600);
   Serial.println("<Arduino is ready>");
 
@@ -45,119 +45,89 @@ void setup() {
   digitalWrite(Dir_B_M2, LOW);
 }
 
-
-
-void loop() {
-    
-    //receivedChar = Serial.read();
-    Serial.println(text[0]);
-    Serial.println("hello");
-
-    
-  for (i = 0; i < sizeof(text); i++) {
-    char temp = text[i];
-    sortString(temp);
-
-};
-
-
-  
+void loop(){
+  for(int i = 0; i <= text_length; i++){
+    sortString(char_array[i]);
+  }
 }
 
-
-
-
-void sortString(char letter) {
-
-  if (letter == 'a' || letter == 'A') {
+void sortString(char letter){
+  if (letter == 'a' || letter == 'A'){
     letterA();
-  } else if (letter == 'b' || letter == 'B') {
+  } else if (letter == 'b' || letter == 'B'){
     letterB();
-  } else if (letter == 'c' || letter == 'C') {
+  } else if (letter == 'c' || letter == 'C'){
     letterC();
-  } else if (letter == 'd' || letter == 'D') {
+  } else if (letter == 'd' || letter == 'D'){
     letterD();
-  } else if (letter == 'e' || letter == 'E') {
+  } else if (letter == 'e' || letter == 'E'){
     letterE();
-  } else if (letter == 'f' || letter == 'F') {
+  } else if (letter == 'f' || letter == 'F'){
     letterF();
-  } else if (letter == 'g' || letter == 'G') {
+  } else if (letter == 'g' || letter == 'G'){
     letterG();
-  } else if(letter == 'h' || letter == 'H') {
+  } else if(letter == 'h' || letter == 'H'){
     letterH();
-  } else if(letter == 'i' || letter == 'I') {
+  } else if(letter == 'i' || letter == 'I'){
     letterI();
-  } else if(letter == 'j' || letter == 'J') {
+  } else if(letter == 'j' || letter == 'J'){
     letterJ();
-  } else if(letter == 'k' || letter == 'K') {
+  } else if(letter == 'k' || letter == 'K'){
     letterK();
-  } else if(letter == 'l' || letter == 'L') {
+  } else if(letter == 'l' || letter == 'L'){
     letterL();
-  } else if(letter == 'm' || letter == 'M') {
+  } else if(letter == 'm' || letter == 'M'){
     letterN();
-  } else if(letter == 'o' || letter == 'O') {
+  } else if(letter == 'o' || letter == 'O'){
     letterO();
-  } else if(letter == 'p' || letter == 'P') {
+  } else if(letter == 'p' || letter == 'P'){
     letterP();
-  } else if(letter == 'q' || letter == 'Q') {
+  } else if(letter == 'q' || letter == 'Q'){
     letterQ();
-  } else if(letter == 'r' || letter == 'R') {
+  } else if(letter == 'r' || letter == 'R'){
     letterR();
-  } else if(letter == 's' || letter == 'S') {
+  } else if(letter == 's' || letter == 'S'){
     letterS();
-  } else if(letter == 't' || letter == 'T') {
+  } else if(letter == 't' || letter == 'T'){
     letterT();
-  } else if(letter == 'u' || letter == 'U') {
+  } else if(letter == 'u' || letter == 'U'){
     letterU();
-  } else if(letter == 'v' || letter == 'V') {
+  } else if(letter == 'v' || letter == 'V'){
     letterV();
-  } else if(letter == 'w' || letter == 'W') {
+  } else if(letter == 'w' || letter == 'W'){
     letterW();
-  } else if(letter == 'x' || letter == 'X') {
+  } else if(letter == 'x' || letter == 'X'){
     letterX();
-  } else if(letter == 'y' || letter == 'Y') {
+  } else if(letter == 'y' || letter == 'Y'){
     letterY();
-  } else if(letter == 'z' || letter == 'Z') {
+  } else if(letter == 'z' || letter == 'Z'){
     letterZ();
-  } else if(letter == '#') {
+  } else if(letter == '#'){
     hashTagSign();
-  } else if(letter == '0') {
+  } else if(letter == '0'){
     numberZERO();
-  } else if(letter == '1') {
+  } else if(letter == '1'){
     numberONE();
-  } else if(letter == '2') {
+  } else if(letter == '2'){
     numberTWO();
-  } else if(letter == '3') {
+  } else if(letter == '3'){
     numberTHREE();
-  } else if(letter == '4') {
+  } else if(letter == '4'){
     numberFOUR();
-  } else if(letter == '5') {
+  } else if(letter == '5'){
     numberFIVE();
-  } else if(letter == '6') {
+  } else if(letter == '6'){
     numberSIX();
-  } else if(letter == '7') {
+  } else if(letter == '7'){
     numberSEVEN();
-  } else if(letter == '8') {
+  } else if(letter == '8'){
     numberEIGHT();
-  } else if(letter == '9') {
+  } else if(letter == '9'){
     numberNINE();
   };
-
-
-
-
-  /* string = serial.read;
-      method RandomName (){
-
-  */
-
-
-
-
 }
 
-
-void forward() {
+void forward(){
   analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, HIGH);
   digitalWrite(Dir_B_M1, LOW);
@@ -174,7 +144,7 @@ void forward() {
   delay(200);
 }
 
-void left() {
+void left(){
   analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, HIGH);
   digitalWrite(Dir_B_M1, LOW);
@@ -191,7 +161,7 @@ void left() {
   delay(200);
 }
 
-void right() {
+void right(){
   analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, LOW);
   digitalWrite(Dir_B_M1, HIGH);
@@ -208,7 +178,7 @@ void right() {
   delay(200);
 }
 
-void backwards() {
+void backwards(){
   analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, LOW);
   digitalWrite(Dir_B_M1, HIGH);
@@ -225,7 +195,7 @@ void backwards() {
   delay(200);
 }
 
-void flipXAxis() {
+void flipXAxis(){
   analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, HIGH);
   digitalWrite(Dir_B_M1, LOW);
@@ -242,7 +212,7 @@ void flipXAxis() {
   delay(200);
 }
 
-void flipYAxis() {
+void flipYAxis(){
   analogWrite(PWM_M1, 255);
   digitalWrite(Dir_A_M1, LOW);
   digitalWrite(Dir_B_M1, HIGH);
@@ -259,7 +229,7 @@ void flipYAxis() {
   delay(200);
 }
 
-void indent() {
+void indent(){
   myServo.write(0);
   delay(100);
   myServo.write(90);
@@ -267,7 +237,7 @@ void indent() {
   myServo.write(0);
 }
 
-void nextLetter() {
+void nextLetter(){
   right();
   delay(500);
   forward();
@@ -282,7 +252,7 @@ void nextLetter() {
   delay(500);
 }
 
-void letterA() {
+void letterA(){
   forward();
   delay(500);
   forward();
@@ -299,7 +269,7 @@ void letterA() {
   delay(500);
 }
 
-void letterB() {
+void letterB(){
   forward();
   delay(500);
   indent();
@@ -314,7 +284,7 @@ void letterB() {
   delay(500);
 }
 
-void letterC() {
+void letterC(){
   forward();
   delay(500);
   forward();
@@ -337,36 +307,7 @@ void letterC() {
   delay(500);
 }
 
-void letterD() {
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-}
-
-void letterE() {
+void letterD(){
   forward();
   delay(500);
   right();
@@ -395,7 +336,36 @@ void letterE() {
   delay(500);
 }
 
-void letterF() {
+void letterE(){
+  forward();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterF(){
   forward();
   delay(500);
   indent();
@@ -420,7 +390,7 @@ void letterF() {
   delay(500);
 }
 
-void letterG() {
+void letterG(){
   forward();
   delay(500);
   indent();
@@ -451,7 +421,7 @@ void letterG() {
   delay(500);
 }
 
-void letterH() {
+void letterH(){
   forward();
   delay(500);
   indent();
@@ -476,7 +446,7 @@ void letterH() {
   delay(500);
 }
 
-void letterI() {
+void letterI(){
   forward();
   delay(500);
   indent();
@@ -499,7 +469,7 @@ void letterI() {
   delay(500);
 }
 
-void letterJ() {
+void letterJ(){
   forward();
   delay(500);
   indent();
@@ -528,7 +498,7 @@ void letterJ() {
   delay(500);
 }
 
-void letterK() {
+void letterK(){
   indent();
   delay(500);
   forward();
@@ -545,7 +515,7 @@ void letterK() {
   delay(500);
 }
 
-void letterL() {
+void letterL(){
   delay(500);
   forward();
   delay(500);
@@ -561,457 +531,9 @@ void letterL() {
   delay(500);
 }
 
-void letterM() {
+void letterM(){
   indent();
   delay(500);
-  forward();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  left();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-}
-
-void letterN() {
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-}
-
-void letterO() {
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  left();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-}
-
-void letterP() {
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  left();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-}
-
-void letterQ() {
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-}
-
-void letterR() {
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  left();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-}
-
-void letterS() {
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  left();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-}
-
-void letterT() {
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  right();
-  delay(500);
-  backwards();
-  delay(500);
-  left();
-  delay(500);
-}
-
-void letterU() {
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  left();
-  delay(500);
-  forward();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-}
-
-void letterV() {
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  left();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-}
-
-void letterW() {
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  forward();
-  delay(500);
-  left();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  backwards();
-  delay(500);
-  left();
-  delay(500);
-}
-
-void letterX() {
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  forward();
-  delay(500);
-  left();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  backwards();
-  delay(500);
-  left();
-}
-
-void letterY() {
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  left();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-}
-
-void letterZ() {
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  forward();
-  delay(500);
-  left();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  left();
-  delay(500);
-  forward();
-  delay(500);
-  right();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-}
-
-void hashTagSign() {
-  indent();
-  delay(500);
-  right();
-  delay(500);
-  forward();
-  delay(500);
-  left();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-}
-
-void numberONE() {
-  forward();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-}
-
-void numberTWO() {
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
-  delay(500);
-  backwards();
-  delay(500);
-  backwards();
-  delay(500);
-}
-
-void numberTHREE() {
   forward();
   delay(500);
   forward();
@@ -1034,7 +556,9 @@ void numberTHREE() {
   delay(500);
 }
 
-void numberFOUR() {
+void letterN(){
+  indent();
+  delay(500);
   forward();
   delay(500);
   right();
@@ -1063,7 +587,9 @@ void numberFOUR() {
   delay(500);
 }
 
-void numberFIVE() {
+void letterO(){
+  indent();
+  delay(500);
   forward();
   delay(500);
   right();
@@ -1072,19 +598,13 @@ void numberFIVE() {
   delay(500);
   indent();
   delay(500);
-  left();
-  delay(500);
-  forward();
-  delay(500);
-  indent();
+  backwards();
   delay(500);
   left();
   delay(500);
   forward();
   delay(500);
   indent();
-  delay(500);
-  right();
   delay(500);
   backwards();
   delay(500);
@@ -1092,7 +612,9 @@ void numberFIVE() {
   delay(500);
 }
 
-void numberSIX() {
+void letterP(){
+  indent();
+  delay(500);
   forward();
   delay(500);
   indent();
@@ -1117,7 +639,9 @@ void numberSIX() {
   delay(500);
 }
 
-void numberSEVEN() {
+void letterQ(){
+  indent();
+  delay(500);
   forward();
   delay(500);
   indent();
@@ -1148,7 +672,9 @@ void numberSEVEN() {
   delay(500);
 }
 
-void numberEIGHT() {
+void letterR(){
+  indent();
+  delay(500);
   forward();
   delay(500);
   indent();
@@ -1173,7 +699,9 @@ void numberEIGHT() {
   delay(500);
 }
 
-void numberNINE() {
+void letterS(){
+  indent();
+  delay(500);
   forward();
   delay(500);
   indent();
@@ -1196,7 +724,449 @@ void numberNINE() {
   delay(500);
 }
 
-void numberZERO() {
+void letterT(){
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+  right();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+}
+
+void letterU(){
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterV(){
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterW(){
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  left();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+}
+
+void letterX(){
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  left();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+}
+
+void letterY(){
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void letterZ(){
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  left();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  right();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void hashTagSign(){
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  left();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+}
+
+void numberONE(){
+  forward();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void numberTWO(){
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void numberTHREE(){
+  forward();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void numberFOUR(){
+  forward();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void numberFIVE(){
+  forward();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void numberSIX(){
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void numberSEVEN(){
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  left();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void numberEIGHT(){
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void numberNINE(){
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  forward();
+  delay(500);
+  right();
+  delay(500);
+  forward();
+  delay(500);
+  indent();
+  delay(500);
+  backwards();
+  delay(500);
+  left();
+  delay(500);
+  backwards();
+  delay(500);
+  backwards();
+  delay(500);
+}
+
+void numberZERO(){
   forward();
   delay(500);
   indent();
