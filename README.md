@@ -51,3 +51,9 @@
   * ### Helpful Links:
     * [OpenCV Tutorial](https://docs.opencv.org/3.4/d8/d4b/tutorial_py_knn_opencv.html)
     * [OpenCV Text Detection Example](https://www.pyimagesearch.com/2018/08/20/opencv-text-detection-east-text-detector/)
+
+# Credits
+* Sam Kriegsman
+* Justin Yu
+* Saad Aftab
+* Ali Aslam
